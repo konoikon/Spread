@@ -14,10 +14,10 @@ export default class Event extends Component {
 
   render() {
     return (
-      <View style={{width: 'auto', height: 180, backgroundColor: 'white', paddingTop:20}}>
-        <Text style={styles.eventTitle}>Event title</Text>
-        <Text style={{textAlign: 'center'}}>Datetime</Text>
-        <Text style={{textAlign: 'center'}}>Location</Text>
+      <View style={{width: 'auto', height: 180, backgroundColor: 'white', paddingTop: 20, margin:10}}>
+        <Text style={styles.eventTitle}>{this.props.title}</Text>
+        <Text style={{textAlign: 'center'}}>{this.props.datetime}</Text>
+        <Text style={{textAlign: 'center'}}>{this.props.location}</Text>
         <Button
           onPress={() =>{
             Alert.alert('Invite will be sent...');
