@@ -15,7 +15,7 @@ export default class HomeScreen extends Component {
         <View style={{width:'auto',height:200, backgroundColor:'red', alignItems: 'center'}}>
           <Button
             onPress={() =>{
-              Alert.alert('Join Event Button pressed');
+              navigate('JoinEvent')
             }}
             title="Join Event"
           />
