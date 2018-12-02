@@ -7,11 +7,11 @@ Spread is a mobile application built to _React Native_, integrated with _Firebas
 
 ### Screenshots
 
-Home Screen:
-![alt text](https://github.com/konoikon/Spread/blob/master/assets/IMG_0396.PNG =100x "Home Screen")
-
-Create Event Screen:
-![alt text](https://github.com/konoikon/Spread/blob/master/assets/IMG_0397.PNG =100x "Create Event Screen")
-
-Join Event Screen:
-![alt text](https://github.com/konoikon/Spread/blob/master/assets/IMG_965675D40D30-1.jpeg =100x "Join Event Screen")
+<dl>
+  <h5>Home Screen:</h5>
+  <img source="https://github.com/konoikon/Spread/blob/master/assets/IMG_0396.PNG" width="100")
+  <h5>Create Event Screen:</h5>
+  <img source="https://github.com/konoikon/Spread/blob/master/assets/IMG_0397.PNG" width="100")
+  <h5>Join Event Screen</h5>
+  <img source="https://github.com/konoikon/Spread/blob/master/assets/IMG_965675D40D30-1.jpeg" width="100")
+</dl>
