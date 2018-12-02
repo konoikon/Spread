@@ -29,11 +29,11 @@ export default class HomeScreen extends Component {
     const events = [];
 
     querySnapshot.forEach((doc) => {
-      const {title, datetime, location, description,
-              eventInvite1Phone, eventInvite2Name, eventInvite1Name,
-              eventInvite2Phone,} = doc.data();
+      const {title, datetime, location} = doc.data();
+      console.log(doc.data());
 
       events.push({
+        key: doc.id,
         title,
         datetime,
         location,

@@ -4,6 +4,7 @@ import { Text, View, StyleSheet, ScrollView, Button, Alert,
 import DatePicker from 'react-native-datepicker';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
+import Communications from 'react-native-communications';
 
 const styles = StyleSheet.create({
   label: {
@@ -33,7 +34,8 @@ export default class CreateEventScreen extends Component {
                   eventInvite1Name: "invite1Name",
                   eventInvite1Phone: "invite1Phone",
                   eventInvite2Name: "invite2Name",
-                  eventInvite2Phone: "invite2Name",}
+                  eventInvite2Phone: "invite2Name",
+                  eventCodes: []}
 
     this.createEvent = this.createEvent.bind(this);
   }
@@ -52,8 +54,11 @@ export default class CreateEventScreen extends Component {
                         eventInvite1Name: this.state.eventInvite1Name,
                         eventInvite2Name: this.state.eventInvite2Name,
                         eventInvite1Phone: this.state.eventInvite1Phone,
-                        eventInvite2Phone: this.state.eventInvite1Phone});
+                        eventInvite2Phone: this.state.eventInvite2Phone,
+                        eventCodes: ["2134", "5412"]});
 
+    Communications.text(this.state.eventInvite1Phone, "Hello " + this.state.eventInvite1Name + " your code to join the event is 2134");
+    //Communications.text(this.state.eventInvite2Phone, "Hello " + this.state.eventInvite2Name + " your code to join the event is 5412");
     this.props.navigation.navigate('Home');
   }
 
