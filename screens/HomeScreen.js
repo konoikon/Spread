@@ -18,7 +18,9 @@ export default class HomeScreen extends Component {
   }
 
   static navigationOptions = {
-    title: 'Spread',
+    title: 'Spread!',
+    headerStyle: {backgroundColor:"#0081cb"},
+    headerTitleStyle: {fontSize:24, color: 'white'},
   };
 
   componentDidMount() {
@@ -54,7 +56,7 @@ export default class HomeScreen extends Component {
     const {navigate} = this.props.navigation;
     return (
       <View style={{flex:1,}}>
-        <ScrollView style={{flex:1, padding:20, backgroundColor:'skyblue',}}>
+        <ScrollView style={{flex:1, padding:20, backgroundColor:'#00b0ff',}}>
           <FlatList
             data={this.state.events}
             renderItem={({item}) => <Event {...item}/>}

@@ -18,11 +18,11 @@ export default class JoinEventScreen extends Component {
           style={{height:40, borderColor: 'white', borderBottomWidth: 2,
                   fontSize: 18}}
           placeholder="Enter Join Code"
-          onChangeText={(joinCode) => this.setState(joinCode)}
+          onChangeText={(joinCode) => this.setState({joinCode})}
         />
         <Button
           onPress={() => {
-            Alert.alert("Join code button pressed")
+            Alert.alert("Event Joined")
             navigate('Home');
           }}
           title="Join Event"
