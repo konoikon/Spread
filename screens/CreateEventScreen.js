@@ -8,9 +8,16 @@ import Communications from 'react-native-communications';
 
 const styles = StyleSheet.create({
   label: {
-    fontSize: 20,
-    color: 'black',
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'white',
   },
+  textbox: {
+    height:40,
+    borderColor: 'white',
+    borderBottomWidth: 2,
+    fontSize: 18
+  }
 });
 
 const config = {
@@ -33,8 +40,6 @@ export default class CreateEventScreen extends Component {
                   eventDatetime: new Date(),
                   eventInvite1Name: "invite1Name",
                   eventInvite1Phone: "invite1Phone",
-                  eventInvite2Name: "invite2Name",
-                  eventInvite2Phone: "invite2Name",
                   eventCodes: []}
 
     this.createEvent = this.createEvent.bind(this);
@@ -52,9 +57,7 @@ export default class CreateEventScreen extends Component {
                         location: this.state.eventLocation,
                         datetime: this.state.eventDatetime,
                         eventInvite1Name: this.state.eventInvite1Name,
-                        eventInvite2Name: this.state.eventInvite2Name,
                         eventInvite1Phone: this.state.eventInvite1Phone,
-                        eventInvite2Phone: this.state.eventInvite2Phone,
                         eventCodes: ["2134", "5412"]});
 
     Communications.text(this.state.eventInvite1Phone, "Hello " + this.state.eventInvite1Name + " your code to join the event is 2134");
@@ -65,28 +68,28 @@ export default class CreateEventScreen extends Component {
   render() {
     return(
       <View style={{backgroundColor: 'grey', flex:1}}>
-        <View style={{backgroundColor: 'blue', flex:1, paddingLeft: 10}}>
+        <View style={{backgroundColor: '#00b0ff', flex:1, paddingLeft: 10, paddingRight: 10, justifyContent:'center'}}>
           <Text style={styles.label}>Title</Text>
           <TextInput
-            style={{height: 40}}
+            style={styles.textbox}
             placeholder="Event Title"
             onChangeText={(eventTitle) => this.setState({eventTitle})}
           />
           <Text style={styles.label}>Description</Text>
           <TextInput
-            style={{height: 40}}
+            style={styles.textbox}
             placeholder="Event Description"
             onChangeText={(eventDescription) => this.setState({eventDescription})}
           />
           <Text style={styles.label}>Location</Text>
           <TextInput
-            style={{height: 40}}
+            style={styles.textbox}
             placeholder="Event Location"
             onChangeText={(eventLocation) => this.setState({eventLocation})}
           />
         </View>
-        <View style={{backgroundColor: 'red', flex: 1, paddingLeft: 10}}>
-          <Text style={styles.label}>Date</Text>
+        <View style={{backgroundColor: '#00b0ff', flex: 0.6, paddingLeft: 10, paddingRight: 10, justifyContent:'center', alignItems:'center', borderColor:'white',borderBottomWidth:3}}>
+          <Text style={styles.label}>Date & TIme</Text>
           <DatePicker
             date={this.state.eventDatetime}
             placeholder='Event Datetime'
@@ -94,38 +97,28 @@ export default class CreateEventScreen extends Component {
             format="YYYY-MM-DD HH:mm"
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
-            showIcon={false}
+            showIcon={true}
             onDateChange={(datetime) => {this.setState({eventDatetime: datetime});}}
           />
         </View>
-        <View style={{backgroundColor: 'yellow', flex: 1, paddingLeft: 10}}>
-          <Text style={styles.label}>Invite 1</Text>
+        <View style={{backgroundColor: '#00b0ff', flex: 1, paddingLeft: 10, paddingRight: 10, justifyContent:'center'}}>
+          <Text style={styles.label}>Invitee Information</Text>
           <TextInput
-            style={{height: 40}}
+            style={styles.textbox}
             placeholder="Name"
             onChangeText={(eventInvite1Name) => this.setState({eventInvite1Name})}
           />
           <TextInput
-            style={{height: 40}}
+            style={styles.textbox}
             placeholder="Phone #"
             onChangeText={(eventInvite1Phone) => this.setState({eventInvite1Phone})}
           />
-          <Text style={styles.label}>Invite 2</Text>
-          <TextInput
-            style={{height: 40}}
-            placeholder="Name"
-            onChangeText={(eventInvite2Name) => this.setState({eventInvite2Name})}
-          />
-          <TextInput
-            style={{height: 40}}
-            placeholder="Phone #"
-            onChangeText={(eventInvite2Phone) => this.setState({eventInvite2Phone})}
-          />
         </View>
-        <View style={{backgroundColor: 'white', flex:0.4}}>
+        <View style={{backgroundColor: '#0081cb', flex:0.4}}>
           <Button
             title="Create Event"
             onPress={this.createEvent}
+            color="white"
           />
         </View>
       </View>

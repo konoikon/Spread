@@ -17,6 +17,10 @@ export default class HomeScreen extends Component {
                   events: [],}
   }
 
+  static navigationOptions = {
+    title: 'Spread',
+  };
+
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
@@ -56,18 +60,20 @@ export default class HomeScreen extends Component {
             renderItem={({item}) => <Event {...item}/>}
           />
         </ScrollView>
-        <View style={{width:'auto',height:200, backgroundColor:'red', alignItems: 'center'}}>
-          <Button
-            onPress={() =>{
-              navigate('JoinEvent')
-            }}
-            title="Join Event"
-          />
+        <View style={{height:200, backgroundColor:'#0081cb', alignItems: 'center', paddingTop:40}}>
+        <Button
+              onPress={() =>{
+                navigate('JoinEvent')
+              }}
+              title="Join Event"
+              color="white"
+            />
           <Button
             onPress={() =>{
               navigate('CreateEvent')
             }}
             title="Create Event"
+            color="white"
           />
         </View>
       </View>

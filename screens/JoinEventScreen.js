@@ -12,16 +12,18 @@ export default class JoinEventScreen extends Component {
   render() {
     const {navigate} = this.props.navigation;
     return(
-      <View style={{backgroundColor: "grey", flex:1, alignItems:'center',
+      <View style={{backgroundColor: "#69e2ff", flex:1, alignItems:'center',
                     justifyContent: 'center'}}>
         <TextInput
-          style={{height: 40}}
+          style={{height:40, borderColor: 'white', borderBottomWidth: 2,
+                  fontSize: 18}}
           placeholder="Enter Join Code"
           onChangeText={(joinCode) => this.setState(joinCode)}
         />
         <Button
           onPress={() => {
             Alert.alert("Join code button pressed")
+            navigate('Home');
           }}
           title="Join Event"
         />
